@@ -1,33 +1,24 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: "Understand general concepts, response codes, and authentication strategies."
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Base URL
 
-## Welcome
+The ProWithdrawals API is designed using **REST** principles, and to ensure the highest level of security, all communication is transmitted over **HTTPS**.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+All requests contain the following base URL:
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+```
+https://prowithdrawals.com/api
+```
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+To authenticate your requests, you'll need to provide an API key, which can be obtained from your [ProWithdrawals dashboard](https://prowithdrawals.com/developers).
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+Include these keys in your request headers under the following keys:
+
+```
+Authorization: Bearer <your-api-key>
 ```

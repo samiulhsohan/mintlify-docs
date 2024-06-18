@@ -1,0 +1,70 @@
+---
+title: "Get Withdraw"
+api: "GET /v1/withdraws/{id}"
+description: "Gets the details of a withdrawal request."
+---
+
+### Path
+
+<ParamField path="id" type="string" required>
+  The ID of the withdrawal request.
+</ParamField>
+
+### Response
+
+<ResponseField name="id" type="string">
+  The ID of the withdrawal request.
+</ResponseField>
+
+<ResponseField name="phone" type="string">
+  The customer's phone number.
+</ResponseField>
+
+<ResponseField name="payment_method" type="string">
+  The payment method used for the withdrawal.
+</ResponseField>
+
+<ResponseField name="amount" type="string">
+  The amount which was requested to be withdrawn.
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  The status of the withdrawal request.\
+  `pending` - The withdrawal request has been received by us and is being processed.\
+  `settled` - The withdrawal request has been settled and the funds have been transferred.\
+  `failed` - The withdrawal request has failed.\
+  `cancelled` - The withdrawal request has been cancelled.\
+  `rejected` - The withdrawal request has been rejected.
+</ResponseField>
+
+<ResponseField name="metadata" type="JSON">
+  Set of key-value pairs that you had attached to an object.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://ProWithdrawals.com/api/v1/withdraws/r6kyvz7uho9c \
+  --header 'Authorization: Bearer <your-api-key>'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "id": "r6kyvz7uho9c",
+  "phone": "01739581984",
+  "payment_method": "bkash",
+  "amount": "500.34",
+  "status": "settled",
+  "metadata": {
+    "invoice_id": "84984"
+  }
+}
+```
+
+</ResponseExample>

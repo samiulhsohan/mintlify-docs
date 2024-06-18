@@ -1,0 +1,27 @@
+---
+title: Error Handling
+description: 'Error codes for ProWithdrawals.'
+---
+
+## Sample Error Response
+
+```json
+{
+  "error": {
+    "code": "invalid_request",
+    "message": "Missing required fields."
+  }
+}
+```
+
+## Error Codes
+
+| Error Code      | HTTP Code |
+|-----------------|-----------|
+| invalid_request | 400       |
+| unauthorized    | 401       |
+| forbidden       | 403       |
+| not_found       | 404       |
+| conflict        | 409       |
+| internal_error  | 500       |
+
